@@ -29,7 +29,7 @@ Version 1 contains the initial NSCLC workflow from QC through subtype discovery 
 
 ## March 19, 2026 Analysis Plan
 
-Version 1 was organized as the initial end-to-end NSCLC ICI workflow. The March 19 plan defined the analysis around the following aims:
+Version 1 was organized as the initial end-to-end NSCLC ICI workflow. The plan defined the analysis around the following aims:
 
 - Build a reference atlas for cell-type annotation.
 - Discover baseline immune subtypes.
@@ -42,9 +42,9 @@ Version 1 was organized as the initial end-to-end NSCLC ICI workflow. The March 
 
 The retained Version 1 immune feature table combined interpretable patient-level immune summaries rather than only using raw cell proportions.
 
-1. Biological SBP and ILR composition features
+1. Biological SBP (sequential binary partition) and ILR composition features
    - ILR-transformed cell-type composition was considered for the baseline immune composition layer.
-   - Biological two-part SBP features were retained for interpretable log-ratio summaries:
+   - Biological SBP features were retained for interpretable log-ratio summaries:
      - `LM_SBP_2part_ilr`: lymphoid-myeloid balance.
      - `CD14_CD16_SBP_2part_ilr`: classic/non-classic monocyte balance.
 
