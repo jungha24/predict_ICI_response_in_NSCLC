@@ -1,14 +1,12 @@
 # Predict ICI Response in NSCLC
 
-This repository organizes code, configuration, documentation, and selected public-facing outputs from an NSCLC immune-checkpoint inhibitor response modeling project.
+This repository documents an analysis workflow for predicting immune checkpoint inhibitor (ICI) response in a pilot NSCLC cohort using clinical metadata and single-cell RNA-seq-derived immune features.
 
-The original working directory on the analysis server was:
+It contains versioned analysis scripts, configuration snapshots, workflow documentation, selected summary outputs, and representative figures. Raw single-cell data, patient-level metadata, and large intermediate matrices are intentionally excluded.
 
-```text
-/data/podo/Projects/project_jhl/20260215_nsclc
-```
+The workflow includes an initial QC/subtype/modeling pipeline (**Version 1**) and a feature-library-based response modeling pipeline (**Version 2**), including staged feature search, outer validation, and exploratory FAMD/KNN/Louvain/UMAP clustering based on top outer-validation features.
 
-Large raw/intermediate data objects and patient-level metadata are intentionally excluded from this Git repository. The repository is structured to make the workflow history, version updates, executable scripts, configuration snapshots, and representative figures reviewable without publishing protected or oversized analysis data.
+<img width="1233" height="766" alt="image" src="https://github.com/user-attachments/assets/ac8f2f61-010d-412e-9996-1a26fc467392" />
 
 ## Repository Layout
 
