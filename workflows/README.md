@@ -40,7 +40,7 @@
         - `n_splits: 3`
         - `n_repeats: 1`
 
-    -Outer validation outputs:
+    - Outer validation outputs:
         - `outer_search_validation/outer_validation_manifest.json`: executed settings and total fold count
         - `outer_search_validation/outer_selected_candidates.csv`: selected candidate feature per outer fold
         - `outer_search_validation/outer_fold_metrics.csv`: baseline and selected-model performance on each outer test fold
