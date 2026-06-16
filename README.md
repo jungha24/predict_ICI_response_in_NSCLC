@@ -27,7 +27,7 @@ Modeling strategy:
 <img width="1277" height="805" alt="image" src="https://github.com/user-attachments/assets/9af7c798-fe27-4cff-82c1-408c6ea125fd" />
 
 This project explores whether systemic immune profiles can be used to define patient-level molecular subgroups associated with ICI response in NSCLC.
-The long-term goal is to identify responder-enriched immune subgroups and further resolve non-responder subgroups to nominate potential biomarkers, therapeutic targets, and genetic factors underlying distinct immune states. Given the limited cohort size, the current analysis focuses on identifying a responder-associated subgroup.
+The long-term goal is to identify responder-enriched immune subgroups and further resolve non-responder subgroups to nominate potential biomarkers, therapeutic targets, and genetic factors underlying distinct immune states. Given the limited cohort size, the current analysis focuses on identifying a responder-associated subgroup, shown as subgroup A in the upper panel. 
 
 ## Repository Layout
 
