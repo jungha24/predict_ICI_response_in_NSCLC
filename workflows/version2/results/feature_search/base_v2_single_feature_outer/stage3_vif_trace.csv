@@ -1,0 +1,2 @@
+endpoint_name,endpoint_type,step,feature,vif,action
+Binarized_response,binary,1,Monocyte__curated_gene_mono_ifn_core__singscore,8.26504245746521,keep

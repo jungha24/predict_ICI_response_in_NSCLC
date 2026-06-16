@@ -1,0 +1,4 @@
+endpoint_name,endpoint_type,outcome_col,n_patients,n_events,n_nonevents,description,time_col,event_col
+Binarized_response,binary,benefit,65,27,38.0,Precomputed binary benefit endpoint from the clinical metadata file.,,
+PFS,survival,,65,61,,,pfs_days,pfs_event
+PFS_6m_restricted,survival,,65,41,,Cox endpoint restricted to the first 183 days; follow-up beyond 6 months is administratively censored at day 183.,pfs_6m_days,pfs_6m_event

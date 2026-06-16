@@ -1,0 +1,175 @@
+seed: 123
+
+metadata_cols:
+  patient_id: patient_id
+  source: source
+  batch: collection_batch
+  timepoint: timepoint
+  celltype: celltype_main
+  age: Age_IO
+  sex: sex
+
+source_values:
+  disease: Lee_p1
+  healthy: AIDA
+
+baseline:
+  value: base
+
+patient_selection:
+  enabled: true
+  file: data/20260309_pilot/results/20260313_patients_selected.txt
+  apply_to_disease_only: true
+
+healthy_sampling:
+  enabled: false
+  n_healthy: 6
+  random_seed: 123
+
+celltypes:
+  proportion:
+    - B
+    - CD14 Mono
+    - CD16 Mono
+    - effector CD8+T
+    - NK
+    - T/NK
+    - naive/TCM CD4+T
+  pseudobulk_pca:
+    - effector CD8+T
+    - CD14 Mono
+    - NK
+    - naive/TCM CD4+T
+  pseudobulk_nmf:
+    - naive/TCM CD4+T
+    - effector CD8+T
+    - NK
+    - CD14 Mono
+
+pseudobulk:
+  min_cells_per_patient_celltype: 20
+
+proportion_features:
+  enabled: false
+  transform: ilr
+  pseudocount: 1e-6
+
+external_patient_features:
+  enabled: true
+  path: data/20260309_pilot/results/version1/data_export/20260320_patient_level_immune_features.txt
+  id_col: patient_id
+  include_columns:
+    - LM_SBP_2part_ilr
+    - CD14_CD16_SBP_2part_ilr
+    - patient_naive_score_mean
+    - patient_cytotoxic_score_mean
+    - patient_naive_minus_cytotoxic_score_mean
+    - patient_cd14_score_mean
+    - patient_cd16_score_mean
+    - patient_cd14_minus_cd16_score_mean
+
+pca_features:
+  npcs_per_celltype: 2
+  max_npcs_to_compute: 15
+  min_patients_per_celltype_pca: 10
+  use_hvg: true
+  hvg_n_top_genes: 2000
+  hvg_flavor: seurat
+  pc_selection_file: data/20260309_pilot/results/version1/subtype_discovery/base_run_v8/pca_pc_selection.json
+
+nmf_features:
+  enabled: true
+  rank: 5
+  min_patients_per_celltype_nmf: 20
+  min_genes_nmf: 200
+  nmf_top_var_genes: 1500
+  top_genes_per_module: 30
+  heatmap_top_genes: 15
+  selected_modules: []
+  selected_modules_file:
+
+feature_selection:
+  high_corr_cutoff: 0.8
+  prop_r2_cutoff: 0.5
+  residual_ratio_cutoff: 0.7
+  prefer: pca
+  always_keep_proportions: false
+  anchor_feature_map:
+    LM_SBP_2part_ilr:
+      anchor_type: biological_sbp
+      related_celltypes: [B, CD14 Mono, CD16 Mono, effector CD8+T, NK, T/NK, naive/TCM CD4+T]
+      feature_types: [pca, nmf]
+    CD14_CD16_SBP_2part_ilr:
+      anchor_type: biological_sbp
+      related_celltypes: [CD14 Mono, CD16 Mono]
+      feature_types: [pca, nmf]
+    patient_naive_score_mean:
+      anchor_type: biological_sbp
+      related_celltypes: [T/NK, naive/TCM CD4+T, effector CD8+T, NK]
+      feature_types: [pca, nmf]
+    patient_cytotoxic_score_mean:
+      anchor_type: biological_sbp
+      related_celltypes: [T/NK, naive/TCM CD4+T, effector CD8+T, NK]
+      feature_types: [pca, nmf]
+    patient_naive_minus_cytotoxic_score_mean:
+      anchor_type: biological_sbp
+      related_celltypes: [T/NK, naive/TCM CD4+T, effector CD8+T, NK]
+      feature_types: [pca, nmf]
+    patient_cd14_score_mean:
+      anchor_type: biological_sbp
+      related_celltypes: [CD14 Mono, CD16 Mono]
+      feature_types: [pca, nmf]
+    patient_cd16_score_mean:
+      anchor_type: biological_sbp
+      related_celltypes: [CD14 Mono, CD16 Mono]
+      feature_types: [pca, nmf]
+    patient_cd14_minus_cd16_score_mean:
+      anchor_type: biological_sbp
+      related_celltypes: [CD14 Mono, CD16 Mono]
+      feature_types: [pca, nmf]
+
+batch_adjustment:
+  enabled: true
+  covariates:
+    - collection_batch
+
+patient_clustering:
+  n_pcs_patient: 10
+  k_range: [2, 3, 4, 5, 6, 7]
+  umap_n_neighbors: 10
+  hierarchical_method: ward
+  umap_min_dist: 0.1
+  random_state: 123
+
+paths:
+  counts_mtx: data/20260309_pilot/results/version1/data_export/20260313_counts.mtx.gz
+  genes_tsv: data/20260309_pilot/results/version1/data_export/20260313_genes.tsv.gz
+  barcodes_tsv: data/20260309_pilot/results/version1/data_export/20260313_barcodes.tsv.gz
+  cell_meta: data/20260309_pilot/results/version1/data_export/20260320_cell_meta.parquet
+  outdir: data/20260309_pilot/results/version1/subtype_discovery/biological_SBP_v1
+
+output:
+  save_plots: true
+  plots_dirname: plots
+
+clinical_association:
+  excel_path: "data/20260309_pilot/nsclc_n73/20260309_eQTL Study_SNU (Pilot cohort)-1.xlsx"
+  sheet_name: "Sheet1"
+  run_patient_key: patient_id
+  clinical_join_key: sample_id
+  cluster_column: patient_cluster
+  benefit_column: PD_Event
+  benefit_positive_values: [0]
+  pfs_time_column: "PFS (Days)"
+  pfs_event_column: PD_Event
+  pfs_event_positive_values: [1]
+  cox_covariates:
+    - Age_IO
+    - Histology
+    - "Sex M: 1  F: 2"
+    - "Smoking Never: 0 Ex: 1 Current: 2"
+    - "ECOG _PS"
+  categorical_covariates:
+    - Histology
+    - "Sex M: 1  F: 2"
+    - "Smoking Never: 0 Ex: 1 Current: 2"

@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "n_endpoints_attempted": 1,
+  "n_endpoints_skipped": 0,
+  "n_outer_folds_total": 3,
+  "settings": {
+    "enabled": true,
+    "n_splits": 3,
+    "n_repeats": 1,
+    "candidate_priority": "stage2_then_stage4_then_baseline",
+    "write_detailed_cv_files": false
+  }
+}

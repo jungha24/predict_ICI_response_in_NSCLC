@@ -1,0 +1,224 @@
+{
+  "started_at": "2026-04-06T10:06:15",
+  "finished_at": "2026-04-07T09:42:07",
+  "wall_time_seconds": 84952.17345719598,
+  "stage_events": [
+    {
+      "stage": "build_search_dataset",
+      "status": "completed",
+      "start_time": "2026-04-06T10:06:15",
+      "end_time": "2026-04-06T10:06:15",
+      "elapsed_seconds": 0.6203808151185513,
+      "config_path": "configs/version2_modeling_base_v2_single_feature_outer.yaml"
+    },
+    {
+      "stage": "exploratory_full_cohort.stage2_single_feature_scan",
+      "status": "completed",
+      "start_time": "2026-04-06T10:06:16",
+      "end_time": "2026-04-06T19:10:16",
+      "elapsed_seconds": 32640.914200367406,
+      "outdir": "data/20260309_pilot/results/version2/feature_search_base_v2_single_feature_outer",
+      "n_patients": 65,
+      "n_candidate_features": 944
+    },
+    {
+      "stage": "exploratory_full_cohort.stage3_redundancy_pruning",
+      "status": "completed",
+      "start_time": "2026-04-06T19:10:16",
+      "end_time": "2026-04-06T19:10:17",
+      "elapsed_seconds": 0.05135199427604675,
+      "outdir": "data/20260309_pilot/results/version2/feature_search_base_v2_single_feature_outer",
+      "n_stage2_rows": 944
+    },
+    {
+      "stage": "exploratory_full_cohort.stage4_subset_search",
+      "status": "completed",
+      "start_time": "2026-04-06T19:10:17",
+      "end_time": "2026-04-06T19:10:17",
+      "elapsed_seconds": 0.005212359130382538,
+      "outdir": "data/20260309_pilot/results/version2/feature_search_base_v2_single_feature_outer",
+      "n_stage3_candidates": 12
+    },
+    {
+      "stage": "exploratory_full_cohort.stage5_best_subset_refits",
+      "status": "completed",
+      "start_time": "2026-04-06T19:10:17",
+      "end_time": "2026-04-06T19:10:17",
+      "elapsed_seconds": 0.006467275321483612,
+      "outdir": "data/20260309_pilot/results/version2/feature_search_base_v2_single_feature_outer",
+      "n_stage4_subsets": 0
+    },
+    {
+      "stage": "exploratory_full_cohort",
+      "status": "completed",
+      "start_time": "2026-04-06T10:06:15",
+      "end_time": "2026-04-06T19:10:17",
+      "elapsed_seconds": 32641.220129268244,
+      "output_dir": "data/20260309_pilot/results/version2/feature_search_base_v2_single_feature_outer"
+    },
+    {
+      "stage": "outer_validation.binarized_response.fold_01.train_search.stage2_single_feature_scan",
+      "status": "completed",
+      "start_time": "2026-04-06T19:10:18",
+      "end_time": "2026-04-07T00:42:47",
+      "elapsed_seconds": 19949.22229872644,
+      "outdir": "data/20260309_pilot/results/version2/feature_search_base_v2_single_feature_outer/outer_search_validation/binarized_response/fold_01",
+      "n_patients": 43,
+      "n_candidate_features": 944
+    },
+    {
+      "stage": "outer_validation.binarized_response.fold_01.train_search.stage3_redundancy_pruning",
+      "status": "completed",
+      "start_time": "2026-04-07T00:42:47",
+      "end_time": "2026-04-07T00:42:47",
+      "elapsed_seconds": 0.03541693650186062,
+      "outdir": "data/20260309_pilot/results/version2/feature_search_base_v2_single_feature_outer/outer_search_validation/binarized_response/fold_01",
+      "n_stage2_rows": 944
+    },
+    {
+      "stage": "outer_validation.binarized_response.fold_01.train_search.stage4_subset_search",
+      "status": "completed",
+      "start_time": "2026-04-07T00:42:47",
+      "end_time": "2026-04-07T00:42:47",
+      "elapsed_seconds": 0.003868531435728073,
+      "outdir": "data/20260309_pilot/results/version2/feature_search_base_v2_single_feature_outer/outer_search_validation/binarized_response/fold_01",
+      "n_stage3_candidates": 10
+    },
+    {
+      "stage": "outer_validation.binarized_response.fold_01.train_search",
+      "status": "completed",
+      "start_time": "2026-04-06T19:10:17",
+      "end_time": "2026-04-07T00:42:47",
+      "elapsed_seconds": 19949.468724042177,
+      "endpoint_name": "Binarized_response",
+      "endpoint_type": "binary",
+      "fold": 1,
+      "n_train": 43,
+      "n_test": 22
+    },
+    {
+      "stage": "outer_validation.binarized_response.fold_01.outer_test_evaluation",
+      "status": "completed",
+      "start_time": "2026-04-07T00:42:47",
+      "end_time": "2026-04-07T00:42:59",
+      "elapsed_seconds": 12.503805879503489,
+      "endpoint_name": "Binarized_response",
+      "endpoint_type": "binary",
+      "fold": 1,
+      "candidate_source": "stage2_single",
+      "selected_subset_size": 1
+    },
+    {
+      "stage": "outer_validation.binarized_response.fold_02.train_search.stage2_single_feature_scan",
+      "status": "completed",
+      "start_time": "2026-04-07T00:43:00",
+      "end_time": "2026-04-07T05:49:40",
+      "elapsed_seconds": 18399.638623390347,
+      "outdir": "data/20260309_pilot/results/version2/feature_search_base_v2_single_feature_outer/outer_search_validation/binarized_response/fold_02",
+      "n_patients": 43,
+      "n_candidate_features": 944
+    },
+    {
+      "stage": "outer_validation.binarized_response.fold_02.train_search.stage3_redundancy_pruning",
+      "status": "completed",
+      "start_time": "2026-04-07T05:49:40",
+      "end_time": "2026-04-07T05:49:40",
+      "elapsed_seconds": 0.12036841548979282,
+      "outdir": "data/20260309_pilot/results/version2/feature_search_base_v2_single_feature_outer/outer_search_validation/binarized_response/fold_02",
+      "n_stage2_rows": 944
+    },
+    {
+      "stage": "outer_validation.binarized_response.fold_02.train_search.stage4_subset_search",
+      "status": "completed",
+      "start_time": "2026-04-07T05:49:40",
+      "end_time": "2026-04-07T05:49:40",
+      "elapsed_seconds": 0.0038367584347724915,
+      "outdir": "data/20260309_pilot/results/version2/feature_search_base_v2_single_feature_outer/outer_search_validation/binarized_response/fold_02",
+      "n_stage3_candidates": 12
+    },
+    {
+      "stage": "outer_validation.binarized_response.fold_02.train_search",
+      "status": "completed",
+      "start_time": "2026-04-07T00:43:00",
+      "end_time": "2026-04-07T05:49:40",
+      "elapsed_seconds": 18399.909681184217,
+      "endpoint_name": "Binarized_response",
+      "endpoint_type": "binary",
+      "fold": 2,
+      "n_train": 43,
+      "n_test": 22
+    },
+    {
+      "stage": "outer_validation.binarized_response.fold_02.outer_test_evaluation",
+      "status": "completed",
+      "start_time": "2026-04-07T05:49:40",
+      "end_time": "2026-04-07T05:49:52",
+      "elapsed_seconds": 12.186025518923998,
+      "endpoint_name": "Binarized_response",
+      "endpoint_type": "binary",
+      "fold": 2,
+      "candidate_source": "stage2_single",
+      "selected_subset_size": 1
+    },
+    {
+      "stage": "outer_validation.binarized_response.fold_03.train_search.stage2_single_feature_scan",
+      "status": "completed",
+      "start_time": "2026-04-07T05:49:53",
+      "end_time": "2026-04-07T09:41:55",
+      "elapsed_seconds": 13922.488908814266,
+      "outdir": "data/20260309_pilot/results/version2/feature_search_base_v2_single_feature_outer/outer_search_validation/binarized_response/fold_03",
+      "n_patients": 44,
+      "n_candidate_features": 944
+    },
+    {
+      "stage": "outer_validation.binarized_response.fold_03.train_search.stage3_redundancy_pruning",
+      "status": "completed",
+      "start_time": "2026-04-07T09:41:55",
+      "end_time": "2026-04-07T09:41:55",
+      "elapsed_seconds": 0.04894290491938591,
+      "outdir": "data/20260309_pilot/results/version2/feature_search_base_v2_single_feature_outer/outer_search_validation/binarized_response/fold_03",
+      "n_stage2_rows": 944
+    },
+    {
+      "stage": "outer_validation.binarized_response.fold_03.train_search.stage4_subset_search",
+      "status": "completed",
+      "start_time": "2026-04-07T09:41:55",
+      "end_time": "2026-04-07T09:41:55",
+      "elapsed_seconds": 0.006229078397154808,
+      "outdir": "data/20260309_pilot/results/version2/feature_search_base_v2_single_feature_outer/outer_search_validation/binarized_response/fold_03",
+      "n_stage3_candidates": 12
+    },
+    {
+      "stage": "outer_validation.binarized_response.fold_03.train_search",
+      "status": "completed",
+      "start_time": "2026-04-07T05:49:53",
+      "end_time": "2026-04-07T09:41:55",
+      "elapsed_seconds": 13922.670888829976,
+      "endpoint_name": "Binarized_response",
+      "endpoint_type": "binary",
+      "fold": 3,
+      "n_train": 44,
+      "n_test": 21
+    },
+    {
+      "stage": "outer_validation.binarized_response.fold_03.outer_test_evaluation",
+      "status": "completed",
+      "start_time": "2026-04-07T09:41:55",
+      "end_time": "2026-04-07T09:42:07",
+      "elapsed_seconds": 11.364161284640431,
+      "endpoint_name": "Binarized_response",
+      "endpoint_type": "binary",
+      "fold": 3,
+      "candidate_source": "stage2_single",
+      "selected_subset_size": 1
+    },
+    {
+      "stage": "outer_search_validation",
+      "status": "completed",
+      "start_time": "2026-04-06T19:10:17",
+      "end_time": "2026-04-07T09:42:07",
+      "elapsed_seconds": 52310.276194104925,
+      "output_dir": "data/20260309_pilot/results/version2/feature_search_base_v2_single_feature_outer/outer_search_validation"
+    }
+  ]
+}

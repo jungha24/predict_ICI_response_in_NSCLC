@@ -1,0 +1,17 @@
+block,source_column,source_columns,feature_column,transform,input_representation,prefix,non_missing_fraction,n_unique,kept_for_modeling
+bio_sbp,CD14_CD16_SBP_2part_ilr,CD14_CD16_SBP_2part_ilr,bio__CD14_CD16_SBP_2part_ilr,none,auto,bio,1.0,65.0,True
+bio_sbp,LM_SBP_2part_ilr,LM_SBP_2part_ilr,bio__LM_SBP_2part_ilr,none,auto,bio,1.0,65.0,True
+bio_sbp,patient_cd14_minus_cd16_score_mean,patient_cd14_minus_cd16_score_mean,bio__patient_cd14_minus_cd16_score_mean,none,auto,bio,1.0,65.0,True
+bio_sbp,patient_cd14_score_mean,patient_cd14_score_mean,bio__patient_cd14_score_mean,none,auto,bio,1.0,65.0,True
+bio_sbp,patient_cd16_score_mean,patient_cd16_score_mean,bio__patient_cd16_score_mean,none,auto,bio,1.0,65.0,True
+bio_sbp,patient_cytotoxic_score_mean,patient_cytotoxic_score_mean,bio__patient_cytotoxic_score_mean,none,auto,bio,1.0,65.0,True
+bio_sbp,patient_naive_minus_cytotoxic_score_mean,patient_naive_minus_cytotoxic_score_mean,bio__patient_naive_minus_cytotoxic_score_mean,none,auto,bio,1.0,65.0,True
+bio_sbp,patient_naive_score_mean,patient_naive_score_mean,bio__patient_naive_score_mean,none,auto,bio,1.0,65.0,True
+pc,CD14 Mono_PC1,CD14 Mono_PC1,pc__CD14_Mono_PC1,none,auto,pc,1.0,65.0,True
+pc,CD14 Mono_PC2,CD14 Mono_PC2,pc__CD14_Mono_PC2,none,auto,pc,1.0,65.0,True
+pc,NK_PC1,NK_PC1,pc__NK_PC1,none,auto,pc,1.0,65.0,True
+pc,NK_PC2,NK_PC2,pc__NK_PC2,none,auto,pc,1.0,65.0,True
+pc,effector CD8+T_PC1,effector CD8+T_PC1,pc__effector_CD8_T_PC1,none,auto,pc,1.0,65.0,True
+pc,effector CD8+T_PC2,effector CD8+T_PC2,pc__effector_CD8_T_PC2,none,auto,pc,1.0,65.0,True
+pc,naive/TCM CD4+T_PC1,naive/TCM CD4+T_PC1,pc__naive_TCM_CD4_T_PC1,none,auto,pc,1.0,65.0,True
+pc,naive/TCM CD4+T_PC2,naive/TCM CD4+T_PC2,pc__naive_TCM_CD4_T_PC2,none,auto,pc,1.0,65.0,True

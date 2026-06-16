@@ -1,0 +1,65 @@
+# macOS and editor noise
+.DS_Store
+*.swp
+*.swo
+.vscode/
+
+# Python/R caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.Rhistory
+.RData
+.Ruserdata
+
+# Logs and runtime artifacts
+*.log
+logs/
+nohup.out
+
+# Environments/build outputs
+.env
+.env.*
+.venv/
+venv/
+node_modules/
+dist/
+build/
+.cache/
+
+# Large or sensitive scientific data
+*.rds
+*.RData
+*.h5ad
+*.h5
+*.loom
+*.mtx
+*.mtx.gz
+*.parquet
+*.feather
+*.pkl
+*.pickle
+
+# Raw/private data locations
+data/
+raw_data/
+private_data/
+server_import/
+
+# Local legacy materials from the previous workspace setup
+analysis/
+20260511_item.pages
+20260522_loop0.key
+20260624_START_*.txt
+
+# Existing local materials in /Users/jeongha/startup/Projects/NSCLC_ICI
+# Keep these out of the GitHub repository while allowing workflow outputs under workflows/.
+/figures/
+/pages/
+/presentation/
+/reference/
+/required_dataset/
+/*.pdf
+/*.xlsx
+/*.docx
+/*.pages

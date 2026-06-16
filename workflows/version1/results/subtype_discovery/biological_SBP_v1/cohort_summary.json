@@ -1,0 +1,119 @@
+{
+  "patients_by_source": {
+    "Lee_p1": 65
+  },
+  "cells_by_source": {
+    "Lee_p1": 212907
+  },
+  "cells_by_celltype": {
+    "CD14 Mono": 58928,
+    "naive/TCM CD4+T": 53655,
+    "NK": 43692,
+    "effector CD8+T": 27784,
+    "B": 13188,
+    "CD16 Mono": 11608,
+    "T/NK": 4052
+  },
+  "patient_celltype_table": [
+    {
+      "analysis_id": "Lee_p1__IO_SC_001",
+      "celltype": "B",
+      "n_cells": 222
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_001",
+      "celltype": "CD14 Mono",
+      "n_cells": 921
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_001",
+      "celltype": "CD16 Mono",
+      "n_cells": 315
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_001",
+      "celltype": "NK",
+      "n_cells": 1014
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_001",
+      "celltype": "T/NK",
+      "n_cells": 20
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_001",
+      "celltype": "effector CD8+T",
+      "n_cells": 531
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_001",
+      "celltype": "naive/TCM CD4+T",
+      "n_cells": 889
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_002",
+      "celltype": "B",
+      "n_cells": 217
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_002",
+      "celltype": "CD14 Mono",
+      "n_cells": 1014
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_002",
+      "celltype": "CD16 Mono",
+      "n_cells": 394
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_002",
+      "celltype": "NK",
+      "n_cells": 714
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_002",
+      "celltype": "T/NK",
+      "n_cells": 12
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_002",
+      "celltype": "effector CD8+T",
+      "n_cells": 321
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_002",
+      "celltype": "naive/TCM CD4+T",
+      "n_cells": 384
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_004",
+      "celltype": "B",
+      "n_cells": 50
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_004",
+      "celltype": "CD14 Mono",
+      "n_cells": 1230
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_004",
+      "celltype": "CD16 Mono",
+      "n_cells": 226
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_004",
+      "celltype": "NK",
+      "n_cells": 1118
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_004",
+      "celltype": "T/NK",
+      "n_cells": 47
+    },
+    {
+      "analysis_id": "Lee_p1__IO_SC_004",
+      "celltype": "effector CD8+T",
+      "n_cells": 425
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+base_config: configs/version1_subtype_base.yaml
+run_root: data/20260309_pilot/results/version1/subtype_discovery/grid_runs_full
+
+grid:
+  seed: [123, 777]
+
+  healthy_sampling.n_healthy: [5, 7, 10]
+
+  pseudobulk.min_cells_per_patient_celltype: [10, 20, 30]
+
+  pca_features.npcs_per_celltype: [3, 5]
+
+  nmf_features.rank: [2, 3, 4]
+
+  nmf_features.min_patients_per_celltype_nmf: [15, 20]
+
+  feature_selection.prop_r2_cutoff: [0.4, 0.5, 0.6]
+  feature_selection.residual_ratio_cutoff: [0.6, 0.7]
+  feature_selection.prefer: [pca, nmf]
+
+  patient_clustering.n_pcs_patient: [8, 10, 12]
+  patient_clustering.umap_n_neighbors: [10, 15]

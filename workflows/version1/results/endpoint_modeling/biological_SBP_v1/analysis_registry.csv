@@ -1,0 +1,8 @@
+analysis_block,feature_set,clinical_feature_set,immune_blocks,n_clinical_features,n_immune_features,description,execution_block,execution_feature_set,is_execution_alias
+primary,clinical_only,base,,9,0,Clinical-only baseline model on the matched cohort.,primary,clinical_only,False
+primary,clinical_plus_bio_sbp,base,bio_sbp,9,8,Primary combined model with clinical covariates plus biological SBP immune features.,primary,clinical_plus_bio_sbp,False
+secondary,immune_only_bio_sbp_plus_pc,,"bio_sbp,pc",0,16,Immune-only reference model using biological SBP immune features and PC features.,secondary,immune_only_bio_sbp_plus_pc,False
+secondary,clinical_plus_bio_sbp,base,bio_sbp,9,8,Combined model using biological SBP immune features only.,primary,clinical_plus_bio_sbp,True
+secondary,clinical_plus_bio_sbp_plus_pc,base,"bio_sbp,pc",9,16,Combined model using biological SBP immune features plus PC features.,secondary,clinical_plus_bio_sbp_plus_pc,False
+secondary,clinical_plus_bio_sbp_with_pd_l1,with_pd_l1,bio_sbp,10,8,Combined model using biological SBP immune features with PD-L1 TPS.,secondary,clinical_plus_bio_sbp_with_pd_l1,False
+secondary,clinical_plus_bio_sbp_plus_pc_with_pd_l1,with_pd_l1,"bio_sbp,pc",10,16,Combined model using biological SBP immune features plus PC features with PD-L1 TPS.,secondary,clinical_plus_bio_sbp_plus_pc_with_pd_l1,False

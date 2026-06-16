@@ -1,0 +1,23 @@
+name: nsclc-subtype
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.11
+  - scanpy
+  - anndata
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - umap-learn
+  - pandas
+  - scipy
+  - pyyaml
+  - pyarrow
+  - openpyxl
+  - lifelines
+  - jupyter
+  - nbformat
+  - r-base
+  - bioconductor-sva
