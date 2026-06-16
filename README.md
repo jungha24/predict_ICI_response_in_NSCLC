@@ -51,8 +51,7 @@ Start here:
 
 ### Version 2
 
-Version 2 was the first dedicated feature-library and feature-search workflow.
-Its source protocol was `analysis/n73_manual_trial_20260305/version2/protocol_v2.0.1.pages`.
+Version 2 focused specifically on building a patient-level immune feature library and systematically searching for features that added predictive value beyond the clinical baseline.
 
 The protocol separates manually curated immune feature construction from the
 Python feature-search pipeline:
