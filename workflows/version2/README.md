@@ -32,19 +32,34 @@ Clinical baseline variables include age, sex, histology, smoking, ECOG, EGFR
 status, IO line, previous palliative chemotherapy, previous palliative targeted
 therapy, and later PD-L1 TPS in the v2.0.1 update.
 
-## Pipeline Stages
+# version 2 protocol note
 
-1. Stage 1: feature library
-   - Construct patient-level immune feature CSVs per cell type or feature
-     family.
-   - Retain only selected pilot-cohort patients before modeling.
-   - Prefix feature names by table alias or stem when merging multiple tables.
+1. Stage 1 feature library
+    - patient-level feature library를 먼저 만든 뒤 Python search pipeline에 넣는 구조
+    - feature type:
+        - cell-level composition
+        - potency/dynamics 또는 CellRank-like transition/priming surrogate
+        - curated gene/pathway scores
+        - pseudobulk program/module
+        - interaction surrogate
+        - selected latent axes, e.g. PC/FAMD summaries
+    - 주요 cell-type block:
+        - B lineage
+        - monocyte
+        - NK
+        - CD4 T
+        - CD8 T
+        - nonconventional T
+    - QC/filtering:
+        - selected patient만 유지
+        - min patients per feature, non-zero/detection 기준, unstable column 제거
+        - 여러 CSV 병합 시 table alias/stem prefix로 feature collision 방지
 
 2. Stage 2: single-feature add-on scan
    - Baseline: clinical model
    - Test: clinical model plus one candidate immune feature
    - Output: delta metric per endpoint
-
+  
 3. Stage 3: redundancy pruning
    - Biological family caps
    - Pairwise correlation pruning
@@ -107,14 +122,18 @@ configuration for the v2.0.1-style search with outer validation.
 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONPATH=src \
 conda run -n nsclc-subtype python src/version2/run_feature_search_v2.py \
   --config configs/version2_modeling_base_v2_single_feature_outer.yaml
+
+conda run -n nsclc-subtype python src/version2/report_repeated_outer_top_features.py \
+  --run-dir data/20260309_pilot/results/version2/feature_search_base_v2_single_feature_outer \
+  --top-n 20
 ```
 
 ## Included Files
 
 ```text
-workflows/version2/
-  configs/       # Version 2 config snapshots
-  documents/     # Original Version 2 workflow notes
+workflows/
+  configs/       # config snapshots
+  documents/     # workflow notes
   figures/       # Feature search and exploratory R plots
   results/       # Selected manifests, summaries, top candidates, and pruning traces
 ```
@@ -122,7 +141,7 @@ workflows/version2/
 Important retained result artifacts include:
 
 ```text
-workflows/version2/results/feature_search/base_v2_single_feature_outer/
+workflowsresults/feature_search/base_v2_single_feature_outer/
   stage2_baseline_metrics.csv
   stage2_single_feature_scan.csv
   stage3_pruned_candidates.csv
@@ -140,7 +159,7 @@ workflows/version2/results/feature_search/base_v2_single_feature_outer/
 Outer-validation feature and clustering figures include:
 
 ```text
-workflows/version2/figures/exploratory_rplots/
+workflows/figures/exploratory_rplots/
   20260427_version2_trial1_fold_group_rank.pdf
   20260429_outervalidation_fold_rocauc.pdf
   20260429_version2_trial1_FAMD_FD12.pdf
