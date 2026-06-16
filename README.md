@@ -57,9 +57,8 @@ The protocol separates manually curated immune feature construction from the
 Python feature-search pipeline:
 
 - Stage 1 feature library generation from patient-level immune features
-  including cell composition, potency/dynamics, curated gene-set scores,
-  pseudobulk programs/modules, interaction surrogates, and selected latent
-  axes such as PCs/FAMD-derived summaries
+  including cell composition, potency/dynamics, curated and denovo gene-set scores, and selected latent
+  axes.
 - Cell-type-specific feature blocks for B, monocyte, NK, CD4 T, CD8 T,
   nonconventional T, and related manually cleaned subsets
 - Clinical baseline covariates including age, sex, histology, smoking, ECOG,
@@ -67,8 +66,6 @@ Python feature-search pipeline:
 - Stage 2 single-feature add-on scans against the clinical baseline
 - Stage 3 redundancy pruning with biological family caps, correlation pruning,
   and VIF pruning
-- Stage 4 subset search
-- Stage 5 best-subset refits, coefficients, and bootstrap stability
 - Outer validation to reduce feature-selection bias
 
 Start here:
@@ -76,18 +73,6 @@ Start here:
 - `workflows/version2/README.md`
 - `src/version2/`
 - `workflows/version2/configs/`
-
-## Data Policy
-
-This repository does not include raw single-cell data, large intermediate objects, or patient-level clinical metadata. Excluded examples include:
-
-- `.rds`, `.RData`, `.h5ad`, `.loom`, `.mtx`, `.mtx.gz`
-- raw `data/20260309_pilot/` objects
-- merged patient-level analysis datasets
-- cell-level score matrices and observation tables
-- large stdout logs from long-running jobs
-
-See `docs/data_policy.md` for details.
 
 ## Environment
 
