@@ -62,12 +62,26 @@ the baseline feature set and adjusted biological family caps.
 ## Main Code
 
 ```text
-src/version2/run_feature_search.py
-src/version2/run_feature_search_v2.py
-src/version2/report_repeated_outer_top_features.py
-src/version2/feature_search/
-src/version2/feature_search_base_v2/
+src/run_feature_search_v2.py #entrypoint
+src/feature_search_base_v2/io_utils.py #input output utils
+src/feature_search_base_v2/data.py #integrate clinical/feature matrix
+src/feature_search_base_v2/design.py #define design
+src/feature_search_base_v2/models.py #model engine
+src/feature_search_base_v2/search.py #실제 탐색 흐름
+src/report_repeated_outer_top_features.py
 ```
+
+models.py
+  - training-fold 기준 imputation/standardization/one-hot
+  - zero-variance, optional corr/VIF pruning << pruning
+  - nested CV elastic-net logistic/Cox
+  - bootstrap stability
+
+search.py
+  - stage 2: baseline clinical model을 endpoint별로 돌리고, candidate immune feature을 하나씩 더한 걸 전부 평가해 baseline 대비 delta metric저장
+  - stage 3: single-feature ranking 상위권에서 family cap을 걸고, pairwise corr와 VIF로 중복 feature 줄여 최종 후보 남기기 << pruning
+  - stage 4: subset size 2,3은 exhaustive, size 4는 beam-search heuristic으로 탐색
+  - stage 5: endpoint별 best subset 상위 3개를 full-data로 다시 튜닝/적압하고 coefficient, bootstrap sbtility, fold-wise coefficient stability저장
 
 ## Key Configs
 
