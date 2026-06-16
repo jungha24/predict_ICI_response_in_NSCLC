@@ -1,38 +1,5 @@
-# Version 2 Workflow
 
-
-## Protocol Summary
-
-The v2 protocol starts with Stage 1 feature-library construction outside the
-main Python search pipeline. It combines clinical metadata with patient-level
-immune features derived from manually reviewed cell-type subsets and
-scRNA-derived summaries.
-
-Feature-library content includes:
-
-- cell-level composition features
-- potency/dynamics and CellRank-like transition or priming summaries where
-  available
-- curated gene-set and pathway scores, including interferon/inflammatory,
-  antigen-presentation, B-cell activation/BCR, myeloid migration/phagocytosis,
-  NK cytotoxicity, T-cell helper/regulatory/dysfunction, and checkpoint-related
-  programs
-- pseudobulk program/module features from PCA/NMF or related program discovery
-- interaction surrogates and selected latent axes such as PCs or FAMD-derived
-  components
-- feature quality filters such as minimum patients per feature, non-zero or
-  detection thresholds, and removal of low-value or unstable columns
-
-Cell-type blocks called out in the protocol and companion scripts include B
-lineage, monocyte, NK, CD4 T, CD8 T, and nonconventional T features. The
-patient-level feature tables are merged by sample/patient ID, and aliases are
-used as feature-name prefixes to avoid collisions.
-
-Clinical baseline variables include age, sex, histology, smoking, ECOG, EGFR
-status, IO line, previous palliative chemotherapy, previous palliative targeted
-therapy, and later PD-L1 TPS in the v2.0.1 update.
-
-# version 2 protocol note
+# protocol note
 
 1. Stage 1 feature library
     - patient-level feature library를 먼저 만든 뒤 Python search pipeline에 넣는 구조
