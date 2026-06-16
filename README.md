@@ -7,7 +7,7 @@ The workflow includes a feature-library-based response modeling pipeline, includ
 <img width="1277" height="805" alt="image" src="https://github.com/user-attachments/assets/9af7c798-fe27-4cff-82c1-408c6ea125fd" />
 
 
-This only include analysis of finding subgroup A (response to anti-PD(L)-1) in upper figure.
+This analysis only includes the identification of subgroup A, which represents patients responding to anti-PD-(L)1 therapy, as shown in the upper panel.
 
 ## Repository Layout
 
