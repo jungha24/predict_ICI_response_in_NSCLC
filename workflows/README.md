@@ -24,25 +24,37 @@
    - Baseline: clinical model
    - Test: clinical model plus one candidate immune feature
    - Output: nested CV delta metric per endpoint
-  
+      - inner CV: modeling.resampling.n_inner_splits: 4
+        - random seed: modeling.random_state: 42
+        - logistic elastic-net grid: modeling.logistic.alpha_grid, l1_ratio_grid
+        - ranking metric: search.stage2.ranking_metric_binary: delta_roc_auc_mean
+        - baseline: search.baseline.mode: clinical_with_pd_l1
 3. Stage 3: redundancy pruning
    - Biological family caps
    - Pairwise correlation pruning
    - VIF pruning
 
 4. Outer validation
-   - Repeats feature selection inside outer folds to reduce selection bias
+   - The run attempted one endpoint, `Binarized_response`, and generated 3 outer folds in total. In each outer fold, the feature search was rerun on the outer-training patients, then the selected candidate was evaluated on the held-out outer-test patients.
+        - `validation.outer_search_cv.enabled: true`
+        - `n_splits: 3`
+        - `n_repeats: 1`
 
-5. Exploratory patient clustering from outer-validation features (result from Stage 3)
+    -Outer validation outputs:
+        - `outer_search_validation/outer_validation_manifest.json`: executed settings and total fold count
+        - `outer_search_validation/outer_selected_candidates.csv`: selected candidate feature per outer fold
+        - `outer_search_validation/outer_fold_metrics.csv`: baseline and selected-model performance on each outer test fold
+        - `outer_search_validation/binarized_response/fold_*/stage2_single_feature_scan.csv`: fold-specific stage2 feature ranking
+
+5. Exploratory patient clustering from outer-validation features
    - Summarize the top 30 feature groups from each of the 3 outer-validation
      folds.
-   - Use those features to build a patient-level exploratory matrix.
+   - Use those features to build a patient-level exploratory matrix (Median-impute missing numeric feature values).
    - Run FAMD on the mixed clinical + immune feature matrix.
    - Build a k-nearest-neighbor graph on selected FAMD dimensions.
    - Run Louvain clustering and visualize the result with UMAP.
    - Overlay cluster, binarized response, RECIST response, 6-month PFS, and
      PD-L1 TPS on the UMAP.
-
 
 ## Main Code
 
@@ -53,7 +65,7 @@ src/feature_search_base_v2/data.py #integrate clinical/feature matrix
 src/feature_search_base_v2/design.py #define design
 src/feature_search_base_v2/models.py #model engine
 src/feature_search_base_v2/search.py #실제 탐색 흐름
-src/report_repeated_outer_top_features.py
+src/report_repeated_outer_top_features.py # extract top features per fold
 ```
 
 models.py
@@ -76,7 +88,6 @@ configs/version2_modeling_base_v2_single_feature_outer.yaml
 ```
 
 `version2_modeling_base_v2_single_feature_outer.yaml` is the main retained
-configuration for the v2.0.1-style search with outer validation.
 
 ## Representative Command
 
