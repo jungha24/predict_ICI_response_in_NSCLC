@@ -8,6 +8,7 @@ The workflow includes an initial QC/subtype/modeling pipeline (**Version 1**) an
 
 <img width="1233" height="766" alt="image" src="https://github.com/user-attachments/assets/ac8f2f61-010d-412e-9996-1a26fc467392" />
 
+This only include analysis of finding subgroup A (response to anti-PD(L)-1) in upper figure.
 ## Repository Layout
 
 ```text
