@@ -1,13 +1,33 @@
 # Predict ICI Response in NSCLC
 
-This repository documents an analysis workflow for predicting immune checkpoint inhibitor (ICI) response in a pilot NSCLC cohort using clinical metadata and single-cell RNA-seq-derived immune features.
+## Project at a glance
 
-The workflow includes a feature-library-based response modeling pipeline, including staged feature search, outer validation, and exploratory FAMD/KNN/Louvain/UMAP clustering based on top outer-validation features.
+Goal: Predict ICI response in NSCLC using clinical metadata and PBMC scRNA-seq-derived immune features.
+
+Cohort: 73 NSCLC patients treated with immune checkpoint inhibitors.
+
+Input modalities:
+- Clinical metadata, including PD-L1 TPS and treatment-related variables
+- Patient-level immune features derived from PBMC scRNA-seq
+
+Feature library:
+- Cell-type composition
+- Cell-state aware score
+- Curated gene set (pathway) module scores
+- De novo gene set module scores
+- Latent axes / PC summaries
+
+Modeling strategy:
+- Clinical baseline model
+- Single immune-feature add-on scan
+- Correlation and VIF-based redundancy pruning
+- Nested cross-validation and outer validation
+- Exploratory FAMD/KNN/Louvain/UMAP clustering using top outer-validation features
 
 <img width="1277" height="805" alt="image" src="https://github.com/user-attachments/assets/9af7c798-fe27-4cff-82c1-408c6ea125fd" />
 
-
-This analysis only includes the identification of subgroup A, which represents patients responding to anti-PD-(L)1 therapy, as shown in the upper panel.
+This project explores whether systemic immune profiles can be used to define patient-level molecular subgroups associated with ICI response in NSCLC.
+The long-term goal is to identify responder-enriched immune subgroups and further resolve non-responder subgroups to nominate potential biomarkers, therapeutic targets, and genetic factors underlying distinct immune states. Given the limited cohort size, the current analysis focuses on identifying a responder-associated subgroup.
 
 ## Repository Layout
 
