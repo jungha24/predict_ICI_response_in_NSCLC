@@ -20,114 +20,17 @@
         - selected patient만 유지
         - min patients per feature, non-zero/detection 기준, unstable column 제거
 
-
-<details>
-<summary><b>Patient-level immune feature library</b></summary>
-
-<div style="font-size: 12px; overflow-x: auto;">
-
-<table>
-  <thead>
-    <tr>
-      <th>Level</th>
-      <th>Feature category</th>
-      <th>B cells</th>
-      <th>Monocytes</th>
-      <th>NK cells</th>
-      <th>CD4 T cells</th>
-      <th>CD8 T cells</th>
-      <th>Non-conventional T cells</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Cell level</td>
-      <td>Composition</td>
-      <td>Naive / memory</td>
-      <td>-</td>
-      <td>-</td>
-      <td>resting naive / PDCD1hi activated / Treg</td>
-      <td>Naive / cytotoxic</td>
-      <td>-</td>
-    </tr>
-
-    <tr>
-      <td>Cell level</td>
-      <td>PCA centroid-based balance</td>
-      <td>naive–memory</td>
-      <td>active–non-classic</td>
-      <td>early response–resting</td>
-      <td>
-        resting naive–immediate early<br>
-        resting naive–PDCD1hi activated<br>
-        immediate early–PDCD1hi activated
-      </td>
-      <td>naive–cytotoxic</td>
-      <td>TRDV2 TRGV9 gdT–TRDV1-like gdT</td>
-    </tr>
-
-    <tr>
-      <td>Cell level</td>
-      <td>Dynamics of cell status</td>
-      <td>naive–memory–plasma</td>
-      <td>active / non-classic</td>
-      <td>immediate early / resting / CD56bright</td>
-      <td>resting naive / PDCD1hi activated / Treg</td>
-      <td>naive / cytotoxic</td>
-      <td>TRDV2 TRGV9 gdT / TRDV1-like gdT</td>
-    </tr>
-
-    <tr>
-      <td>Patient level</td>
-      <td>Curated gene sets</td>
-      <td>
-        5 inflammation-related Hallmarks<br>
-        3 antigen presentation-related gene sets<br>
-        11 B cell-related functional panels
-      </td>
-      <td>
-        5 inflammation-related Hallmarks<br>
-        12 monocyte-related functional panels<br>
-        4 additional gene sets
-      </td>
-      <td>
-        5 inflammation-related Hallmarks<br>
-        6 NK cell-related functional panels<br>
-        4 additional gene sets
-      </td>
-      <td>
-        10 inflammation- and status-related Hallmarks<br>
-        14 CD4 T cell-related functional panels<br>
-        9 additional gene sets
-      </td>
-      <td>
-        10 inflammation- and status-related Hallmarks<br>
-        14 CD8 T cell-related functional panels<br>
-        9 additional gene sets
-      </td>
-      <td>
-        10 inflammation- and status-related Hallmarks<br>
-        14 T cell-related functional panels<br>
-        10 additional gene sets
-      </td>
-    </tr>
-
-    <tr>
-      <td>Patient level</td>
-      <td>De novo gene sets</td>
-      <td>4 metaprograms</td>
-      <td>6 metaprograms</td>
-      <td>3 metaprograms</td>
-      <td>5 metaprograms</td>
-      <td>4 metaprograms</td>
-      <td>1 metaprogram</td>
-    </tr>
-  </tbody>
-</table>
-
-</div>
-
-</details>
+        <details> <summary><b>Patient-level immune feature library</b></summary>
+        
+        | Level         | Feature category           | B cells                                                                                                             | Monocytes                                                                                           | NK cells                                                                                          | CD4 T cells                                                                                                        | CD8 T cells                                                                                                        | Non-conventional T cells                                                                                        |
+        | ------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+        | Cell level    | Composition                | Naive / memory                                                                                                      | -                                                                                                   | -                                                                                                 | resting naive / PDCD1hi activated / Treg                                                                           | Naive / cytotoxic                                                                                                  | -                                                                                                               |
+        | Cell level    | PCA centroid-based balance | naive–memory                                                                                                        | active–non-classic                                                                                  | early response–resting                                                                            | resting naive–immediate early<br>resting naive–PDCD1hi activated<br>immediate early–PDCD1hi activated              | naive–cytotoxic                                                                                                    | TRDV2 TRGV9 gdT–TRDV1-like gdT                                                                                  |
+        | Cell level    | Dynamics of cell status    | naive–memory–plasma                                                                                                 | active / non-classic                                                                                | immediate early / resting / CD56bright                                                            | resting naive / PDCD1hi activated / Treg                                                                           | naive / cytotoxic                                                                                                  | TRDV2 TRGV9 gdT / TRDV1-like gdT                                                                                |
+        | Patient level | Curated gene sets          | 5 inflammation-related Hallmarks<br>3 antigen presentation-related gene sets<br>11 B cell-related functional panels | 5 inflammation-related Hallmarks<br>12 monocyte-related functional panels<br>4 additional gene sets | 5 inflammation-related Hallmarks<br>6 NK cell-related functional panels<br>4 additional gene sets | 10 inflammation- and status-related Hallmarks<br>14 CD4 T cell-related functional panels<br>9 additional gene sets | 10 inflammation- and status-related Hallmarks<br>14 CD8 T cell-related functional panels<br>9 additional gene sets | 10 inflammation- and status-related Hallmarks<br>14 T cell-related functional panels<br>10 additional gene sets |
+        | Patient level | De novo gene sets          | 4 metaprograms                                                                                                      | 6 metaprograms                                                                                      | 3 metaprograms                                                                                    | 5 metaprograms                                                                                                     | 4 metaprograms                                                                                                     | 1 metaprogram                                                                                                   |
+        
+        </details>
 
 
 
