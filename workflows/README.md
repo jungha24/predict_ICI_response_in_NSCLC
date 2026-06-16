@@ -131,5 +131,3 @@ The clustering script is retained at
 features, applies median imputation, and then runs the FAMD -> KNN -> Louvain
 -> UMAP workflow.
 
-Large CV detail tables, raw feature libraries, cell-level outputs, and
-patient-level feature matrices are excluded.
