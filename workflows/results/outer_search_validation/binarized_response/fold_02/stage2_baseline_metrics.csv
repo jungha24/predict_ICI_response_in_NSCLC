@@ -1,2 +1,0 @@
-endpoint_name,endpoint_type,n_patients,clinical_feature_set,roc_auc_mean,roc_auc_sd,auprc_mean,auprc_sd,brier_mean,brier_sd
-Binarized_response,binary,43,with_pd_l1,0.6408333333333335,0.19197512889272583,0.6485019841269842,0.16888551979778985,0.262940760642452,0.06898352481057704

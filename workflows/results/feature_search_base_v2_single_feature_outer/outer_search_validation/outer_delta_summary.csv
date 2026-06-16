@@ -1,0 +1,2 @@
+endpoint_name,endpoint_type,n_folds,delta_roc_auc_mean,delta_auprc_mean,delta_brier_mean,delta_roc_auc_sd,delta_auprc_sd,delta_brier_sd
+Binarized_response,binary,3,-0.19112060778727447,-0.1451912439571538,0.06284404967441871,0.06142035419701576,0.05953881730136843,0.013511869102111539

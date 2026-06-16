@@ -1,0 +1,2 @@
+endpoint_name,endpoint_type,step,feature,vif,action
+Binarized_response,binary,1,NK__curated_gene_gobp_positive_regulation_of_natural_killer_cell_mediated_immunity__pc2,9.892211931245907,keep
