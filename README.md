@@ -40,9 +40,8 @@ Version 1 built the first end-to-end pipeline:
 
 - QC and annotation setup using `configs/nsclc_v1.json`
 - Reference atlas integration and cell type annotation through R scripts
-- Patient-level subtype discovery from pseudobulk, PCA/NMF, and cell-type proportion features
+- Patient-level subtype discovery from pseudobulk, PCA/NMF, and biological meaningful sequential binary partition (SBP; lymphoid vs myeloid, CD4-related vs CD8-related, etc)
 - Endpoint modeling for binarized response, PFS, and 6-month restricted PFS
-- Later biological SBP update using patient-level immune features instead of older composition-only features
 
 Start here:
 
