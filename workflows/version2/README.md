@@ -1,15 +1,5 @@
 # Version 2 Workflow
 
-Version 2 reorganized the modeling task around a manually curated immune
-feature library followed by staged feature search. The source protocol is
-`analysis/n73_manual_trial_20260305/version2/protocol_v2.0.1.pages`; this
-README reflects the recoverable protocol text plus the v2 pipeline notes copied
-into this repository.
-
-The retained v2.0.1 local archive was reviewed from
-`analysis/n73_manual_trial_20260305/version2/v.2.0.1`. Public-facing scripts,
-summary outputs, and representative figures were folded into this workflow
-directory. Raw patient-level feature matrices remain excluded.
 
 ## Protocol Summary
 
