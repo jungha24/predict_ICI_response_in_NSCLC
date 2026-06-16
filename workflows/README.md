@@ -24,7 +24,7 @@
    - Baseline: clinical model
    - Test: clinical model plus one candidate immune feature
    - Output: nested CV delta metric per endpoint
-      - inner CV: modeling.resampling.n_inner_splits: 4
+        - inner CV: modeling.resampling.n_inner_splits: 4
         - random seed: modeling.random_state: 42
         - logistic elastic-net grid: modeling.logistic.alpha_grid, l1_ratio_grid
         - ranking metric: search.stage2.ranking_metric_binary: delta_roc_auc_mean
