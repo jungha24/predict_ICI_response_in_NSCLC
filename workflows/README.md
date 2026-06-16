@@ -123,7 +123,7 @@ conda run -n nsclc-subtype python src/version2/run_feature_search_v2.py \
 
 conda run -n nsclc-subtype python src/version2/report_repeated_outer_top_features.py \
   --run-dir data/20260309_pilot/results/version2/feature_search_base_v2_single_feature_outer \
-  --top-n 20
+  --top-n 30
 ```
 
 ## Included Files
