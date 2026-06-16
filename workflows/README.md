@@ -40,9 +40,8 @@ therapy, and later PD-L1 TPS in the v2.0.1 update.
         - cell-level composition
         - potency/dynamics 또는 CellRank-like transition/priming surrogate
         - curated gene/pathway scores
-        - pseudobulk program/module
-        - interaction surrogate
-        - selected latent axes, e.g. PC/FAMD summaries
+        - pseudobulk de novo program/module
+        - selected latent axes, e.g. PC summaries
     - 주요 cell-type block:
         - B lineage
         - monocyte
@@ -53,7 +52,6 @@ therapy, and later PD-L1 TPS in the v2.0.1 update.
     - QC/filtering:
         - selected patient만 유지
         - min patients per feature, non-zero/detection 기준, unstable column 제거
-        - 여러 CSV 병합 시 table alias/stem prefix로 feature collision 방지
 
 2. Stage 2: single-feature add-on scan
    - Baseline: clinical model
