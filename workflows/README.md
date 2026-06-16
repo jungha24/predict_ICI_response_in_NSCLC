@@ -125,24 +125,6 @@ workflows/results/
     repeated_top_features__top30_details.csv
 ```
 
-Outer-validation feature and clustering figures include:
-
-```text
-workflows/figures/exploratory_rplots/
-  20260427_version2_trial1_fold_group_rank.pdf
-  20260429_outervalidation_fold_rocauc.pdf
-  20260429_version2_trial1_FAMD_FD12.pdf
-  20260429_version2_trial1_FAMD_FD23.pdf
-  20260429_version2_trial1_FAMD_FD1_explain.pdf
-  20260429_version2_trial1_FAMD_FD2_explain.pdf
-  20260429_version2_trial1_FAMD_umap.pdf
-  20260429_version2_trial1_FAMD_umap_binarized_response.pdf
-  20260429_version2_trial1_FAMD_umap_PFS_6mo.pdf
-  20260429_version2_trial1_FAMD_umap_RECIST.pdf
-  20260429_version2_trial1_FAMD_umap_PDL1_TPS.pdf
-  20260429_version2_trial1_FAMD_cluster_DEF*.pdf
-```
-
 The clustering script is retained at
 `scripts/r/20260408_feature_based_clustering.R`. Its top-30 branch reads
 `repeated_top_features__top30.csv`, selects the first 30 representative
