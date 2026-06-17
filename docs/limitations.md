@@ -20,11 +20,11 @@ The workflow scans many candidate immune features across multiple feature famili
 
 ## Fold Instability
 
-Top-ranked features vary across outer folds. This instability is expected in a small cohort and should be interpreted as a warning against overclaiming any single biomarker or immune signature (see workflow/figures/exploratory_rplots/20260427_version2_trial1_fold_group_rank.pdf, 20260429_outervalidation_fold_rocauc.pdf).
+Top-ranked features vary across outer folds. This instability is expected in a small cohort and should be interpreted as a warning against overclaiming any single biomarker or immune signature (see workflows/results/feature_search_base_v2_single_feature_outer/outer_search_validation/outer_selected_candidates.csv, workflows/results/feature_search_base_v2_single_feature_outer/outer_search_validation/repeated_top_features__top30__details.csv).
 
 ## Negative Outer Validation Result
 
-In the retained 3-fold outer validation, the single selected immune-feature model from each fold underperformed the clinical baseline model on held-out ROC-AUC and AUPRC. This does not mean every candidate feature was uninformative. Rather, it means the supervised feature-selection procedure did not produce a robust held-out predictive model in this small cohort (see workflow/results/feature_search_base_v2_single_feature_outer/outer_search_validation/outer_fold_metrics.csv, outer_metrics_summary.csv).
+In the retained 3-fold outer validation, the single selected immune-feature model from each fold underperformed the clinical baseline model on held-out ROC-AUC and AUPRC. This does not mean every candidate feature was uninformative. Rather, it means the supervised feature-selection procedure did not produce a robust held-out predictive model in this small cohort (see workflows/results/feature_search_base_v2_single_feature_outer/outer_search_validation/outer_fold_metrics.csv and workflows/results/feature_search_base_v2_single_feature_outer/outer_search_validation/outer_metrics_summary.csv).
 
 ## Exploratory Clustering Is Not Confirmatory
 
