@@ -2,14 +2,14 @@
 # protocol note
 
 1. Stage 1 feature library
-    - patient-level feature library를 먼저 만든 뒤 Python search pipeline에 넣는 구조
+    - Build the patient-level feature library first, then pass it into the Python search pipeline.
     - feature type:
         - cell-level composition
-        - potency/dynamics 또는 CellRank-like transition/priming surrogate
+        - potency/dynamics or CellRank-like transition/priming surrogates
         - curated gene/pathway scores
         - pseudobulk de novo program/module
         - selected latent axes, e.g. PC summaries
-    - 주요 cell-type block:
+    - major cell-type blocks:
         - B lineage
         - monocyte
         - NK
@@ -17,8 +17,8 @@
         - CD8 T
         - nonconventional T
     - QC/filtering:
-        - selected patient만 유지
-        - min patients per feature, non-zero/detection 기준, unstable column 제거
+        - retain only selected patients
+        - apply minimum-patient, non-zero/detection, and unstable-column filters
 
 
     <details> <summary><b>Patient-level immune feature library</b></summary>
@@ -79,19 +79,19 @@ src/feature_search_base_v2/io_utils.py #input output utils
 src/feature_search_base_v2/data.py #integrate clinical/feature matrix
 src/feature_search_base_v2/design.py #define design
 src/feature_search_base_v2/models.py #model engine
-src/feature_search_base_v2/search.py #실제 탐색 흐름
+src/feature_search_base_v2/search.py # search workflow
 src/report_repeated_outer_top_features.py # extract top features per fold
 ```
 
 models.py
-  - training-fold 기준 imputation/standardization/one-hot
+  - training-fold-only imputation, standardization, and one-hot encoding
   - zero-variance, optional corr/VIF pruning << pruning
   - nested CV elastic-net logistic/Cox
   - bootstrap stability
 
 search.py
-  - stage 2: baseline clinical model을 endpoint별로 돌리고, candidate immune feature을 하나씩 더한 걸 전부 평가해 baseline 대비 delta metric저장
-  - stage 3: single-feature ranking 상위권에서 family cap을 걸고, pairwise corr와 VIF로 중복 feature 줄여 최종 후보 남기기 << pruning
+  - Stage 2: run the baseline clinical model for each endpoint, add one candidate immune feature at a time, and save the delta metric versus baseline.
+  - Stage 3: start from the top single-feature rankings, apply family caps, reduce redundant features with pairwise correlation and VIF pruning, and retain final candidates.
   
 ## Key Configs
 
