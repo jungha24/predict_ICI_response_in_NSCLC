@@ -48,6 +48,17 @@ Modeling strategy:
 - Nested cross-validation and outer validation
 - Exploratory FAMD/KNN/Louvain/UMAP clustering using top outer-validation features
 
+## Honest result summary
+
+Nested cross-validation identified multiple immune features with apparent signal when added to the clinical baseline model. The retained top-30 feature table summarizes feature-level ranking stability and ROC-AUC deltas across the three outer-training searches (see results/feature_search_base_v2_single_feature_outer/outer_search_validation/repeated_top_features_to30.csv), and these features were used for exploratory FAMD/KNN/Louvain/UMAP subgroup analysis.
+
+This should be interpreted separately from the final supervised outer-validation result. In the retained 3-fold outer validation for the binary response endpoint, the single selected immune-feature model in each fold had lower held-out ROC-AUC and AUPRC than the clinical baseline model (see results/feature_search_base_v2_single_feature_outer/outer_search_validation/outer_fold_metrics.csv). This suggests that although some immune features showed training-fold signal, the supervised selected-feature model did not generalize robustly in this small cohort.
+
+The main purpose of this repository is therefore not to claim a validated positive predictor. It is to document a leakage-aware small-cohort ML workflow for translational biomarker discovery, including feature search, stability review, exploratory subgroup analysis, negative validation evidence, and limitations.
+
+Reviewer starting points:
+- [Reviewer guide](docs/reviewer_guide.md)
+- [Limitations](docs/limitations.md)
 
 ## Data availability and what can be reviewed
 
@@ -62,4 +73,3 @@ Instead, this repository is intended to document the analysis design and modelin
 - workflow documentation describing staged feature search, redundancy pruning, and outer validation;
 
 The goal of this repository is therefore not to provide a fully public reanalysis of the protected cohort, but to demonstrate the structure, rationale, and implementation of a leakage-aware small-cohort translational modeling pipeline.
-

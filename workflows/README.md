@@ -75,13 +75,17 @@
 
 ```text
 src/run_feature_search_v2.py #entrypoint
-src/feature_search_base_v2/io_utils.py #input output utils
-src/feature_search_base_v2/data.py #integrate clinical/feature matrix
-src/feature_search_base_v2/design.py #define design
-src/feature_search_base_v2/models.py #model engine
-src/feature_search_base_v2/search.py # search workflow
+src/feature_search_base_v2/io_utils.py # input output utils
+src/feature_search_base_v2/search.py # run workflow
+src/feature_search_base_v2/data.py # make clinical + immune feature matrix
+src/feature_search_base_v2/design.py # define endpoint/baseline feature set
+src/feature_search_base_v2/models.py # model engine
 src/report_repeated_outer_top_features.py # extract top features per fold
 ```
+
+search.py
+  - Stage 2: run the baseline clinical model for each endpoint, add one candidate immune feature at a time, and save the delta metric versus baseline.
+  - Stage 3: start from the top single-feature rankings, apply family caps, reduce redundant features with pairwise correlation and VIF pruning, and retain final candidates.
 
 models.py
   - training-fold-only imputation, standardization, and one-hot encoding
@@ -89,10 +93,11 @@ models.py
   - nested CV elastic-net logistic/Cox
   - bootstrap stability
 
-search.py
-  - Stage 2: run the baseline clinical model for each endpoint, add one candidate immune feature at a time, and save the delta metric versus baseline.
-  - Stage 3: start from the top single-feature rankings, apply family caps, reduce redundant features with pairwise correlation and VIF pruning, and retain final candidates.
-  
+
+When outer validation is disabled, Stage 2/3 are run once on the full analysis cohort and produce CV-based feature rankings and pruned candidate lists.
+
+When outer validation is enabled, the same Stage 2/3 search procedure is rerun independently inside each outer-training fold. A candidate feature is selected from the outer-training search only, then both the clinical baseline and clinical-plus-selected-feature models are fit on the outer-training patients and evaluated on the held-out outer-test patients. These held-out evaluations are written to outer_search_validation/outer_fold_metrics.csv. The repeated top-feature summaries aggregate feature-level ranking signals across the outer-training searches and are used for exploratory FAMD/KNN/Louvain/UMAP analysis, not as direct held-out performance metrics.
+
 ## Key Configs
 
 ```text
